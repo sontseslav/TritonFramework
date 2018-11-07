@@ -50,19 +50,11 @@ namespace Framework.Helpers
             wait.Until(wd => js.ExecuteScript("return document.readyState").ToString() == "complete");
         }
 
-        public static void Wait()
-        {
-            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-        }
-
-        public void Wait2()
+        public void Wait()
         {
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(3));
             IJavaScriptExecutor js = (IJavaScriptExecutor) webDriver;
             wait.Until(wd => js.ExecuteScript("return document.readyState === 'complete';"));
         }
-        
-        
     }
-
 }
