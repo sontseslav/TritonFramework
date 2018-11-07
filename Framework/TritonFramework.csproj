@@ -57,6 +57,7 @@
     <Compile Include="Pages\AccountPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="Pages\OrdersPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -18,6 +18,7 @@ namespace Tests
             webDriver = new ChromeDriver();
             webDriver.Navigate().GoToUrl("https://www.tritonshoes.ru/");
             mainPage = new MainPage(webDriver);
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
         }
 
         [TearDown]

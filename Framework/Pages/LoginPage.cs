@@ -29,6 +29,7 @@ namespace Framework.Pages
         #region Methods
 
         private IWebDriver webDriver;
+        
 
         public LoginPage(IWebDriver webDriver)
         {
@@ -43,14 +44,13 @@ namespace Framework.Pages
             PasswordField.Clear();
             PasswordField.SendKeys("p77p77");
             LoginBtn.Click();
-            var wait = new WebDriverWait(this.webDriver, TimeSpan.FromSeconds(100));
+            //webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            //webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
             /*
+            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(20));
             IJavaScriptExecutor js = (IJavaScriptExecutor)webDriver;
-            int timeoutSec = 30;
-            WebDriverWait wait = new WebDriverWait(webDriver, new TimeSpan(0, 0, timeoutSec));
-            wait.Until(wd => js.ExecuteScript("return document.readyState").ToString() == "complete");
+            wait.Until(wd => js.ExecuteScript("return document.readyState === 'complete';"));
             */
-            Thread.Sleep(1500);
             return accountPage;
         }
 
