@@ -8,23 +8,12 @@ namespace Tests.Tests
         public void FirstTest()
         {
             var accountPage = mainPage.GoToLoginPage().GoToAccountPage();
-
-            var saveBtn = accountPage.SaveBtn;
-            Assert.Multiple(() =>
-            {
-                Assert.That(saveBtn, Is.Not.Null);
-                Assert.That(saveBtn.Displayed, Is.True);
-            });
-
-
+            Assert.IsNotNull(accountPage.SaveBtn);
+            Assert.IsTrue(accountPage.SaveBtn.Displayed);
+            
             var ordersPage = accountPage.GoToOrdersPage();
-
-            var logoutBtn = ordersPage.LogoutBtn;
-            Assert.Multiple(() =>
-            {
-                Assert.That(logoutBtn, Is.Not.Null);
-                Assert.That(logoutBtn.Displayed, Is.True);
-            });
+            Assert.IsNotNull(ordersPage.LogoutBtn);
+            Assert.IsTrue(ordersPage.LogoutBtn.Displayed);
         }
     }
 }

@@ -23,7 +23,10 @@ namespace Tests
         [TearDown]
         public void TearDown()
         {
-            webDriver.Close();
+            if (webDriver != null)
+            {
+                webDriver.Close();
+            }
         }
     }
 }
