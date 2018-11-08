@@ -1,13 +1,16 @@
-﻿using System;
-using System.Threading;
-using Framework.Helpers;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
-    public class LoginPage : Waiters
+    public class LoginPage
     {
+        private IWebDriver webDriver;
+        
+        public LoginPage(IWebDriver webDriver)
+        {
+            this.webDriver = webDriver;
+        }
+
         #region Locators
 
         private By LOGIN_FIELD = By.Id("loginform-username");
@@ -28,14 +31,6 @@ namespace Framework.Pages
 
         #region Methods
 
-        private IWebDriver webDriver;
-        
-
-        public LoginPage(IWebDriver webDriver)
-        {
-            this.webDriver = webDriver;
-        }
-
         public AccountPage GoToAccountPage()
         {
             var accountPage = new AccountPage(webDriver);
@@ -44,13 +39,6 @@ namespace Framework.Pages
             PasswordField.Clear();
             PasswordField.SendKeys("p77p77");
             LoginBtn.Click();
-            //webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
-            //webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
-            /*
-            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(20));
-            IJavaScriptExecutor js = (IJavaScriptExecutor)webDriver;
-            wait.Until(wd => js.ExecuteScript("return document.readyState === 'complete';"));
-            */
             return accountPage;
         }
 

@@ -4,6 +4,13 @@ namespace Framework.Pages
 {
     public class OrdersPage
     {
+        public IWebDriver webDriver;
+
+        public OrdersPage(IWebDriver webDriver)
+        {
+            this.webDriver = webDriver;
+        }
+
         #region Locators
 
         private By LOGOUT_BTN =
@@ -19,13 +26,8 @@ namespace Framework.Pages
 
         #region Methods
 
-        public IWebDriver webDriver;
-
-        public OrdersPage(IWebDriver webDriver)
-        {
-            this.webDriver = webDriver;
-        }
         
+
         #endregion
     }
 }

@@ -4,6 +4,13 @@ namespace Framework.Pages
 {
     public class MainPage
     {
+        public IWebDriver webDriver;
+
+        public MainPage(IWebDriver webDriver)
+        {
+            this.webDriver = webDriver;
+        }
+
         #region Locators
 
         private By ACCOUNT_BTN
@@ -18,13 +25,6 @@ namespace Framework.Pages
         #endregion
 
         #region Methods
-
-        public IWebDriver webDriver;
-
-        public MainPage(IWebDriver webDriver)
-        {
-            this.webDriver = webDriver;
-        }
 
         public LoginPage GoToLoginPage()
         {

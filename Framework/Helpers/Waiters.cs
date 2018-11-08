@@ -6,7 +6,9 @@ namespace Framework.Helpers
 {
     public class Waiters
     {
-        public static void WaitForPageToLoad(IWebDriver webDriver)
+        private static IWebDriver webDriver;
+        /*
+        public static void WaitForPageToLoadJS(IWebDriver webDriver)
         {
             TimeSpan timeout = new TimeSpan(0, 0, 30);
             WebDriverWait wait = new WebDriverWait(webDriver, timeout);
@@ -39,22 +41,23 @@ namespace Framework.Helpers
                 }
             });
         }
-
-        private static IWebDriver webDriver;
-
-        public static void WaitForPageToLoad2()
+        */
+        /*
+        public static void WaitForPageToLoadJS2()
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor) webDriver;
             int timeoutSec = 60;
             WebDriverWait wait = new WebDriverWait(webDriver, new TimeSpan(0, 0, timeoutSec));
             wait.Until(wd => js.ExecuteScript("return document.readyState").ToString() == "complete");
         }
-
+        */
+        /*
         public void Wait()
         {
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(3));
             IJavaScriptExecutor js = (IJavaScriptExecutor) webDriver;
             wait.Until(wd => js.ExecuteScript("return document.readyState === 'complete';"));
         }
+        */
     }
 }

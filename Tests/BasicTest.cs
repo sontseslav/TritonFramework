@@ -3,7 +3,6 @@ using Framework.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace Tests
 {
@@ -26,13 +25,5 @@ namespace Tests
         {
             webDriver.Close();
         }
-
-        /*
-        public IWebElement waitForElement(By locator, int maxSeconds)
-        {
-            return new WebDriverWait(webDriver, TimeSpan.FromSeconds(maxSeconds))
-                .Until(ExpectedConditions.ElementExists(locator));
-        }
-        */
     }
 }
