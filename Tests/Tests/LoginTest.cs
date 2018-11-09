@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
-
 
 namespace Tests.Tests
 {
@@ -9,16 +7,13 @@ namespace Tests.Tests
         [Test]
         public void FirstTest()
         {
-            var loginBtn = mainPage.GoToLoginPage().GoToAccountPage();
-
-                //waitForElement(By.XPath("//form[@action='/account/logout']/button[@type='submit']"), 60);
-
-            var btn = loginBtn.SaveBtn;
-            Assert.Multiple(() =>
-            {
-                Assert.That(btn, Is.Not.Null);
-                Assert.That(btn.Displayed, Is.True);
-            });
+            var accountPage = mainPage.GoToLoginPage().GoToAccountPage();
+            Assert.IsNotNull(accountPage.SaveBtn);
+            Assert.IsTrue(accountPage.SaveBtn.Displayed);
+            
+            var ordersPage = accountPage.GoToOrdersPage();
+            Assert.IsNotNull(ordersPage.LogoutBtn);
+            Assert.IsTrue(ordersPage.LogoutBtn.Displayed);
         }
     }
 }

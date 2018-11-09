@@ -1,18 +1,24 @@
-﻿using OpenQA.Selenium.Support;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
     public class AccountPage
     {
-        
-        
+        public IWebDriver webDriver;
+
+        public AccountPage(IWebDriver webDriver)
+        {
+            this.webDriver = webDriver;
+        }
+
         #region Locators
 
         private By LOGOUT_BTN =
             By.XPath("//form[@action='/account/logout']/button[@type='submit']");
         private By SAVE_BTN =
             By.XPath("/html//div[@class='']//form[@action='/account']//button[@type='submit']");
+        private By ORDERS_BTN =
+            By.LinkText("Мои заказы");
 
         #endregion
 
@@ -22,15 +28,17 @@ namespace Framework.Pages
 
         public IWebElement SaveBtn => webDriver.FindElement(SAVE_BTN);
 
+        private IWebElement OrdersBtn => webDriver.FindElement(ORDERS_BTN);
+
         #endregion
 
         #region Methods
 
-        public IWebDriver webDriver;
-
-        public AccountPage(IWebDriver webDriver)
+        public OrdersPage GoToOrdersPage()
         {
-            this.webDriver = webDriver;
+            var ordersPage = new OrdersPage(webDriver);
+            OrdersBtn.Click();
+            return ordersPage;
         }
 
         #endregion
