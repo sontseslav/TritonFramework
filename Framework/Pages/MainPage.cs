@@ -1,12 +1,13 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.PageObjects;
+using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
-    public class MainPage
+    public class MainPage : Header
     {
         public IWebDriver webDriver;
 
-        public MainPage(IWebDriver webDriver)
+        public MainPage(IWebDriver webDriver) : base(webDriver)
         {
             this.webDriver = webDriver;
         }

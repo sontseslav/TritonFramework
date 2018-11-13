@@ -1,12 +1,13 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.PageObjects;
+using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
-    public class AccountPage
+    public class AccountPage : Header
     {
         public IWebDriver webDriver;
 
-        public AccountPage(IWebDriver webDriver)
+        public AccountPage(IWebDriver webDriver) : base(webDriver)
         {
             this.webDriver = webDriver;
         }

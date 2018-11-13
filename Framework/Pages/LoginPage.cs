@@ -1,12 +1,13 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.PageObjects;
+using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
-    public class LoginPage
+    public class LoginPage : Header
     {
         private IWebDriver webDriver;
         
-        public LoginPage(IWebDriver webDriver)
+        public LoginPage(IWebDriver webDriver) : base(webDriver)
         {
             this.webDriver = webDriver;
         }
@@ -31,7 +32,7 @@ namespace Framework.Pages
 
         #region Methods
 
-        public AccountPage GoToAccountPage()
+        public AccountPage LogIn()
         {
             var accountPage = new AccountPage(webDriver);
             LoginField.Clear();
