@@ -1,4 +1,5 @@
-﻿using Framework.Pages;
+﻿using System.Threading;
+using Framework.Pages;
 using Framework.Pages.ProductsPages;
 using OpenQA.Selenium;
 

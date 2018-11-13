@@ -2,31 +2,20 @@
 
 namespace Tests.Tests
 {
-    public class PageObjectsTest : BasicTest
+    public class PageObjectsWithoutLogin : BasicTest
     {
         [Test]
-        public void CheckPageObjects()
+        public void CheckPageObjectsWithoutLoginTest()
         {
             var woomenShoes = mainPage
-                .GoToLoginPage()
-                .LogIn()
-                //.GoToMenShoesPage()
                 .GoToWoomenShoesPage();
-            
+
             Assert.IsNotNull(woomenShoes.PageTitle);
             Assert.IsTrue(woomenShoes.PageTitle.Displayed);
             Assert.AreEqual(woomenShoes.PageTitle.Text, "Женская обувь");
-            
-
-            var accountPage = woomenShoes
-                .GoToAccountPage();
-
-            Assert.IsNotNull(accountPage.LogoutBtn);
-            Assert.IsTrue(accountPage.LogoutBtn.Displayed);
-            Assert.AreEqual(accountPage.PageTitle.Text, "Личный кабинет");
 
 
-            var menShoes = accountPage
+            var menShoes = woomenShoes
                 .GoToMenShoesPage();
 
             Assert.IsNotNull(menShoes.PageTitle);
