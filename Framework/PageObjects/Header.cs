@@ -1,7 +1,9 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using Framework.Pages;
 using Framework.Pages.ProductsPages;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Framework.PageObjects
 {
@@ -40,7 +42,6 @@ namespace Framework.PageObjects
         //private By CART_BTN = By.Id("miniCart");
         //private By SEARCH_BTN = By.XPath("//div[@class='line3']//a[@href='#']");
 
-        private By PAGE_TITLE = By.XPath("//h1");
         
         #endregion
 
@@ -51,8 +52,6 @@ namespace Framework.PageObjects
         private IWebElement MenShoesBtn => webDriver.FindElement(MUZHSKAYA_OBUV_BTN);
 
         private IWebElement AccountBtn => webDriver.FindElement(ACCOUNT_BTN);
-
-        public IWebElement PageTitle => webDriver.FindElement(PAGE_TITLE);
 
         #endregion
 
@@ -78,6 +77,7 @@ namespace Framework.PageObjects
             AccountBtn.Click();
             return accountPage;
         }
+
         #endregion
     }
 }

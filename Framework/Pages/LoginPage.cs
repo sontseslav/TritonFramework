@@ -1,9 +1,11 @@
-﻿using Framework.PageObjects;
+﻿using System;
+using Framework.PageObjects;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Framework.Pages
 {
-    public class LoginPage : Header
+    public class LoginPage : MainPage
     {
         private IWebDriver webDriver;
         

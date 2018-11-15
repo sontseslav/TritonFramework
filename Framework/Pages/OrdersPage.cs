@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
-    public class OrdersPage : Header
+    public class OrdersPage : MainPage
     {
         public IWebDriver webDriver;
 

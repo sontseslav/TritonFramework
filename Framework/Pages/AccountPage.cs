@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
-    public class AccountPage : Header
+    public class AccountPage : MainPage
     {
         public IWebDriver webDriver;
 
@@ -11,6 +11,7 @@ namespace Framework.Pages
         {
             this.webDriver = webDriver;
         }
+
 
         #region Locators
 
@@ -31,6 +32,7 @@ namespace Framework.Pages
 
         private IWebElement OrdersBtn => webDriver.FindElement(ORDERS_BTN);
 
+        
         #endregion
 
         #region Methods
@@ -41,7 +43,7 @@ namespace Framework.Pages
             OrdersBtn.Click();
             return ordersPage;
         }
-
+        
         #endregion
     }
 }

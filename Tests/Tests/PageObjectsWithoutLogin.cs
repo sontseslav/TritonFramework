@@ -7,20 +7,19 @@ namespace Tests.Tests
         [Test]
         public void CheckPageObjectsWithoutLoginTest()
         {
-            var woomenShoes = mainPage
-                .GoToWoomenShoesPage();
-
-            Assert.IsNotNull(woomenShoes.PageTitle);
-            Assert.IsTrue(woomenShoes.PageTitle.Displayed);
-            Assert.AreEqual(woomenShoes.PageTitle.Text, "Женская обувь");
+            var pageTitle = mainPage;
 
 
-            var menShoes = woomenShoes
-                .GoToMenShoesPage();
+            header.GoToWoomenShoesPage();
 
-            Assert.IsNotNull(menShoes.PageTitle);
-            Assert.IsTrue(menShoes.PageTitle.Displayed);
-            Assert.AreEqual(menShoes.PageTitle.Text, "Мужская обувь");
+            Assert.IsTrue(pageTitle.PageTitle.Displayed);
+            Assert.AreEqual(pageTitle.PageTitle.Text, "Женская обувь");
+
+
+            header.GoToMenShoesPage();
+
+            Assert.IsTrue(pageTitle.PageTitle.Displayed);
+            Assert.AreEqual(pageTitle.PageTitle.Text, "Мужская обувь");
         }
     }
 }

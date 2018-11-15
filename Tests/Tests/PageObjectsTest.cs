@@ -1,37 +1,39 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using NUnit.Framework;
 
 namespace Tests.Tests
 {
     public class PageObjectsTest : BasicTest
     {
         [Test]
-        public void CheckPageObjects()
+        public void CheckPageObjectsTest()
         {
-            var woomenShoes = mainPage
+            var pageTitle = mainPage
                 .GoToLoginPage()
-                .LogIn()
-                //.GoToMenShoesPage()
-                .GoToWoomenShoesPage();
+                .LogIn();
+            Thread.Sleep(1500);
+
+            header.GoToWoomenShoesPage();
             
-            Assert.IsNotNull(woomenShoes.PageTitle);
-            Assert.IsTrue(woomenShoes.PageTitle.Displayed);
-            Assert.AreEqual(woomenShoes.PageTitle.Text, "Женская обувь");
+            Assert.IsTrue(pageTitle.PageTitle.Displayed);
+            Assert.AreEqual(pageTitle.PageTitle.Text, "Женская обувь");
+
+
+            header.GoToMenShoesPage();
             
-
-            var accountPage = woomenShoes
-                .GoToAccountPage();
-
-            Assert.IsNotNull(accountPage.LogoutBtn);
-            Assert.IsTrue(accountPage.LogoutBtn.Displayed);
-            Assert.AreEqual(accountPage.PageTitle.Text, "Личный кабинет");
+            Assert.IsTrue(pageTitle.PageTitle.Displayed);
+            Assert.AreEqual(pageTitle.PageTitle.Text, "Мужская обувь");
 
 
-            var menShoes = accountPage
-                .GoToMenShoesPage();
+            header.GoToAccountPage();
 
-            Assert.IsNotNull(menShoes.PageTitle);
-            Assert.IsTrue(menShoes.PageTitle.Displayed);
-            Assert.AreEqual(menShoes.PageTitle.Text, "Мужская обувь");
+            Assert.IsTrue(pageTitle.LogoutBtn.Displayed);
+            Assert.AreEqual(pageTitle.PageTitle.Text, "Личный кабинет");
+
+            header.GoToWoomenShoesPage();
+
+            Assert.IsTrue(pageTitle.PageTitle.Displayed);
+            Assert.AreEqual(pageTitle.PageTitle.Text, "Женская обувь");
         }
     }
 }
