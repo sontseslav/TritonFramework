@@ -37,7 +37,7 @@ namespace Framework.Pages
         public OrdersPage GoToOrdersPage()
         {
             var ordersPage = new OrdersPage(webDriver);
-            OrdersBtn.Click();
+            waiters.ClickAndWaitForPageToLoad(OrdersBtn);
             return ordersPage;
         }
         

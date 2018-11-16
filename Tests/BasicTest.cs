@@ -12,7 +12,7 @@ namespace Tests
         public IWebDriver webDriver;
         public MainPage mainPage;
         public Header header;
-
+        
         [SetUp]
         public void SetUp()
         {

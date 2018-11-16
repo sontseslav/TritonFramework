@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Tests.Tests
 {
@@ -12,8 +11,7 @@ namespace Tests.Tests
             var pageTitle = mainPage
                 .GoToLoginPage()
                 .LogIn();
-            Thread.Sleep(1500);
-
+            
             header.GoToWoomenShoesPage();
             
             Assert.IsTrue(pageTitle.PageTitle.Displayed);
