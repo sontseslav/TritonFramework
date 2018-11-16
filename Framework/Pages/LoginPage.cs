@@ -1,7 +1,4 @@
-﻿using System;
-using Framework.PageObjects;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 
 namespace Framework.Pages
 {

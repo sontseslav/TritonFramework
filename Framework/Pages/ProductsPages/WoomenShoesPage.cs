@@ -1,5 +1,4 @@
-﻿using Framework.PageObjects;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Framework.Pages.ProductsPages
 {

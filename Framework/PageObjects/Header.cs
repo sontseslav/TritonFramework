@@ -1,9 +1,6 @@
-﻿using System;
-using System.Threading;
-using Framework.Pages;
+﻿using Framework.Pages;
 using Framework.Pages.ProductsPages;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
 namespace Framework.PageObjects
 {
@@ -42,7 +39,6 @@ namespace Framework.PageObjects
         //private By CART_BTN = By.Id("miniCart");
         //private By SEARCH_BTN = By.XPath("//div[@class='line3']//a[@href='#']");
 
-        
         #endregion
 
         #region UI Elements

@@ -6,6 +6,7 @@ namespace Framework.Helpers
 {
     public class Waiters
     {
+        /*
         private static IWebDriver webDriver;
         
         public static void WaitForPageToLoadJS(IWebDriver webDriver)
@@ -41,7 +42,7 @@ namespace Framework.Helpers
                 }
             });
         }
-        
+        */
         /*
         public static void WaitForPageToLoadJS2()
         {

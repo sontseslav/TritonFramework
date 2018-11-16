@@ -56,8 +56,8 @@
     <Compile Include="BasicTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\LoginTest.cs" />
-    <Compile Include="Tests\PageObjectsTest.cs" />
-    <Compile Include="Tests\PageObjectsWithoutLogin.cs" />
+    <Compile Include="Tests\MenShoesPageTest.cs" />
+    <Compile Include="Tests\WoomenShoesPageTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

@@ -1,5 +1,4 @@
-﻿using Framework.PageObjects;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
@@ -11,7 +10,6 @@ namespace Framework.Pages
         {
             this.webDriver = webDriver;
         }
-
 
         #region Locators
 
@@ -32,7 +30,6 @@ namespace Framework.Pages
 
         private IWebElement OrdersBtn => webDriver.FindElement(ORDERS_BTN);
 
-        
         #endregion
 
         #region Methods
