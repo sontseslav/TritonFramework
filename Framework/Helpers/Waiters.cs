@@ -6,8 +6,9 @@ namespace Framework.Helpers
 {
     public class Waiters
     {
-        private static IWebDriver webDriver;
         /*
+        private static IWebDriver webDriver;
+        
         public static void WaitForPageToLoadJS(IWebDriver webDriver)
         {
             TimeSpan timeout = new TimeSpan(0, 0, 30);

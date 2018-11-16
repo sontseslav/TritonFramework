@@ -2,11 +2,11 @@
 
 namespace Framework.Pages
 {
-    public class OrdersPage
+    public class OrdersPage : MainPage
     {
         public IWebDriver webDriver;
 
-        public OrdersPage(IWebDriver webDriver)
+        public OrdersPage(IWebDriver webDriver) : base(webDriver)
         {
             this.webDriver = webDriver;
         }

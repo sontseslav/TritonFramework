@@ -2,11 +2,11 @@
 
 namespace Framework.Pages
 {
-    public class AccountPage
+    public class AccountPage : MainPage
     {
         public IWebDriver webDriver;
 
-        public AccountPage(IWebDriver webDriver)
+        public AccountPage(IWebDriver webDriver) : base(webDriver)
         {
             this.webDriver = webDriver;
         }
@@ -40,7 +40,7 @@ namespace Framework.Pages
             OrdersBtn.Click();
             return ordersPage;
         }
-
+        
         #endregion
     }
 }

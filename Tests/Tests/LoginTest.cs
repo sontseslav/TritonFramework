@@ -7,12 +7,17 @@ namespace Tests.Tests
         [Test]
         public void FirstTest()
         {
-            var accountPage = mainPage.GoToLoginPage().GoToAccountPage();
-            Assert.IsNotNull(accountPage.SaveBtn);
+            var accountPage = mainPage
+                .GoToLoginPage()
+                .LogIn();
+
             Assert.IsTrue(accountPage.SaveBtn.Displayed);
-            
-            var ordersPage = accountPage.GoToOrdersPage();
-            Assert.IsNotNull(ordersPage.LogoutBtn);
+            Assert.AreEqual(accountPage.PageTitle.Text, "Личный кабинет");
+
+
+            var ordersPage = accountPage
+                .GoToOrdersPage();
+
             Assert.IsTrue(ordersPage.LogoutBtn.Displayed);
         }
     }

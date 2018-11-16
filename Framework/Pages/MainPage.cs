@@ -15,12 +15,16 @@ namespace Framework.Pages
 
         private By ACCOUNT_BTN
             = By.XPath("//a[@href='/account']");
+        private By PAGE_TITLE
+            = By.XPath("//h1");
 
         #endregion
 
         #region UI Elements
 
         private IWebElement AccountBtn => webDriver.FindElement(ACCOUNT_BTN);
+
+        public IWebElement PageTitle => webDriver.FindElement(PAGE_TITLE);
 
         #endregion
 
