@@ -1,14 +1,17 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.Helpers;
+using OpenQA.Selenium;
 
 namespace Framework.Pages
 {
     public class MainPage
     {
         public IWebDriver webDriver;
+        public Waiters waiters;
 
         public MainPage(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
+            waiters = new Waiters(webDriver);
         }
 
         #region Locators

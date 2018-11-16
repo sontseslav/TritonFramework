@@ -38,7 +38,7 @@ namespace Framework.Pages
             LoginField.SendKeys("6546565");
             PasswordField.Clear();
             PasswordField.SendKeys("p77p77");
-            LoginBtn.Click();
+            waiters.ClickAndWaitForPageToLoad(LoginBtn);
             return accountPage;
         }
 
