@@ -7,7 +7,7 @@ namespace Framework.Pages
     {
         public IWebDriver webDriver;
         public Waiters waiters;
-
+        
         public MainPage(IWebDriver webDriver)
         {
             this.webDriver = webDriver;

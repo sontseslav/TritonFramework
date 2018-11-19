@@ -16,6 +16,7 @@ namespace Framework.Pages
         private By LOGIN_FIELD = By.Id("loginform-username");
         private By PASSWORD_FIELD = By.Id("loginform-password");
         private By LOGIN_BTN = By.XPath("//button[@name='login-button']");
+        private By REGISTRATION_BTN = By.XPath("//a[@href='/account/registration']");
 
         #endregion
 
@@ -26,6 +27,8 @@ namespace Framework.Pages
         private IWebElement LoginField => webDriver.FindElement(LOGIN_FIELD);
 
         private IWebElement PasswordField => webDriver.FindElement(PASSWORD_FIELD);
+
+        private IWebElement RegistrationBtn => webDriver.FindElement(REGISTRATION_BTN);
 
         #endregion
 
@@ -40,6 +43,13 @@ namespace Framework.Pages
             PasswordField.SendKeys("p77p77");
             waiters.ClickAndWaitForPageToLoad(LoginBtn);
             return accountPage;
+        }
+
+        public RegistrationPage GoToRegistrationPage()
+        {
+            var registrationPage = new RegistrationPage(webDriver);
+            waiters.ClickAndWaitForPageToLoad(RegistrationBtn);
+            return registrationPage;
         }
 
         #endregion
