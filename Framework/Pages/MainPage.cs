@@ -14,6 +14,9 @@ namespace Framework.Pages
             waiters = new Waiters(webDriver);
         }
 
+        public static string RandomUsername = RandomStringGenerators.CreateRandomString(6);
+        public static string RandomPassword = RandomStringGenerators.CreateRandomString(8);
+
         #region Locators
 
         private By ACCOUNT_BTN
