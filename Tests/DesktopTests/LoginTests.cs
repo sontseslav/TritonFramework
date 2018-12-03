@@ -2,7 +2,7 @@
 
 namespace Tests.Tests
 {
-    public class LoginTests : BasicTest
+    public class LoginTests : BasicDesktopTest
     {
         [Test]
         [Description("Test verifies that user can login using valid credentials")]

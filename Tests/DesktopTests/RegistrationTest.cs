@@ -2,7 +2,7 @@
 
 namespace Tests.Tests
 {
-    public class RegistrationTest : BasicTest
+    public class RegistrationTest : BasicDesktopTest
     {
         [Test]
         [Description("Test verifies that user can create an account and login in it")]
@@ -23,6 +23,5 @@ namespace Tests.Tests
 
             Assert.AreEqual(accountPage.PageTitle.Text, "Личный кабинет");
         }
-
     }
 }

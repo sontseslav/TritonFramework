@@ -2,7 +2,7 @@
 
 namespace Tests.Tests
 {
-    public class MenShoesPageTest : BasicTest
+    public class MenShoesPageTest : BasicDesktopTest
     {
         [Test]
         [Description("Test verifies that Men Shoes Page is loaded")]

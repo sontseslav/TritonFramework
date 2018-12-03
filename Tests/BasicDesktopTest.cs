@@ -7,7 +7,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace Tests
 {
-    public class BasicTest
+    public class BasicDesktopTest
     {
         public IWebDriver webDriver;
         public MainPage mainPage;
