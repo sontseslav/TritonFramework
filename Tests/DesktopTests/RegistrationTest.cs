@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Tests.Tests
+namespace Tests.DesktopTests
 {
     public class RegistrationTest : BasicDesktopTest
     {
